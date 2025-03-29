@@ -196,7 +196,7 @@ const handleFileUpload = async (event) => {
 
   loading.value = true
   try {
-    const response = await $fetch('http://localhost:3080/api/uploadPdf', {
+    const response = await $fetch('https://belgesel-backend-734033514286.us-central1.run.app/api/uploadPdf', {
       method: 'POST',
       body: formData,
     })
