@@ -117,7 +117,7 @@
                   <div class="space-y-2">
                     <div v-if="item.chunk">
                       <h4 class="font-medium text-gray-700">Sayfa İçeriği:</h4>
-                      <pre class="mt-1 p-2 bg-gray-50 rounded text-sm overflow-x-auto">{{ item.chunk.pageContent }}</pre>
+                      <pre class="mt-1 p-2 bg-gray-50 rounded text-sm overflow-x-auto">{{ item.chunk }}</pre>
                     </div>
                     <div v-if="item.chunk?.metadata">
                       <h4 class="font-medium text-gray-700">Metadata:</h4>
@@ -196,6 +196,7 @@ const handleFileUpload = async (event) => {
 
   loading.value = true
   try {
+    //const response = await $fetch('http://localhost:3080/api/uploadPdf', {
     const response = await $fetch('https://belgesel-backend-734033514286.us-central1.run.app/api/uploadPdf', {
       method: 'POST',
       body: formData,
